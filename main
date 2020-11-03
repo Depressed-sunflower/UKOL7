@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include "Body2d.h"
+#define POCET_BODU 10
+
+main()
+{
+	int body[POCET_BODU][2] = { {5, 10}, {-14, 2}, {45, 4}, {-9, 8}, {58, -3}, {47, 5}, {-18, -86}, {75, 7}, {-25, 51},{17, 98}};
+
+	int refX = 0, refY = 0;
+
+	printf_s("Zadejte referencni hodnotu pro X: ");
+	scanf_s("%d", &refX);
+	printf_s("\nZadejte referencni hodnotu pro Y: ");
+	scanf_s("%d", &refY);
+
+	int in = indexNejblizsi(POCET_BODU, (&body)[2], refX, refY);
+	double pv = prumernaVzdalenost(POCET_BODU, (&body)[2], refX, refY);
+
+	printf_s("Nejblizsi bod ma souradnice x: %d a y: %d \n ", body[in][0], body[in][1]);
+	printf_s("Prumerna vzdalenost je %lf.", pv);
+}
